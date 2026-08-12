@@ -1,35 +1,19 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (gh-pages branch)
 
 on:
   push:
     branches: [ main ]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-    outputs:
-      site-path: ${{ steps.upload-pages-artifact.outputs.uploaded-path }}
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload Pages Artifact
-        id: upload-pages-artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v5
         with:
-          path: ./
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          # keep files from repo root; adjust if you build into a subfolder
