@@ -46,18 +46,24 @@
             <p><strong>Business Details:</strong> ABN 426 304 683 25</p>
           </div>
         </div>
-        <form class="contact-form">
+
+        <div id="form-success" class="form-success" style="display:none;margin-bottom:1rem;padding:0.75rem;border-radius:6px;background:#e6ffed;color:#064e3b">Thanks — your message was sent. We’ll respond shortly.</div>
+
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mrpzkobk" method="POST">
+          <input type="hidden" name="_subject" value="Website enquiry - Trivio Rescue">
+          <input type="hidden" name="_next" value="/contact.html?success=1">
+
           <label>
             Name
-            <input type="text" placeholder="Your name" required>
+            <input type="text" name="name" placeholder="Your name" required>
           </label>
           <label>
             Email
-            <input type="email" placeholder="you@example.com" required>
+            <input type="email" name="email" placeholder="you@example.com" required>
           </label>
           <label>
             Message
-            <textarea rows="5" placeholder="Tell us about your goals" required></textarea>
+            <textarea name="message" rows="5" placeholder="Tell us about your goals" required></textarea>
           </label>
           <button type="submit" class="btn btn-primary">Send message</button>
         </form>
@@ -70,6 +76,22 @@
 
   <div data-include="partials/footer.html"></div>
 
+  <script>
+  // Show simple success message when redirected back with ?success=1
+  document.addEventListener('DOMContentLoaded', function(){
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('success') === '1') {
+        var el = document.getElementById('form-success');
+        if (el) el.style.display = 'block';
+        // remove query string without reloading
+        if (history.replaceState) history.replaceState(null, '', window.location.pathname);
+      }
+    } catch (e) {
+      // ignore
+    }
+  });
+  </script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
