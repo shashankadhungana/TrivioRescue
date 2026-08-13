@@ -32,19 +32,24 @@ function initUI() {
 
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const submitButton = contactForm.querySelector('button[type="submit"]');
-      if (submitButton) {
-        submitButton.textContent = 'Message sent!';
-        submitButton.disabled = true;
-        setTimeout(() => {
-          submitButton.textContent = 'Send message';
-          submitButton.disabled = false;
-          contactForm.reset();
-        }, 1800);
-      }
-    });
+    // If the form posts to an external endpoint (e.g. Formspree), allow normal submission.
+    const action = contactForm.getAttribute('action') || '';
+    const isExternal = /^https?:\/\//i.test(action) && !action.includes(location.hostname);
+    if (!isExternal) {
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        if (submitButton) {
+          submitButton.textContent = 'Message sent!';
+          submitButton.disabled = true;
+          setTimeout(() => {
+            submitButton.textContent = 'Send message';
+            submitButton.disabled = false;
+            contactForm.reset();
+          }, 1800);
+        }
+      });
+    }
   }
 }
 
