@@ -5,20 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trivio Rescue | Business Solutions</title>
   <meta name="description" content="Trivio Rescue delivers expert business services, modern web strategy, and reliable support to help your company grow.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="canonical" href="https://www.triviorescue.com/">
+  <meta property="og:title" content="Trivio Rescue | Business Solutions">
+  <meta property="og:description" content="Trivio Rescue delivers expert business services, modern web strategy, and reliable support to help your company grow.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.triviorescue.com/">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Trivio Rescue",
+    "url": "https://www.triviorescue.com/"
+  }
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <div data-include="partials/header.html"></div>
+  <div data-include="/partials/header.html"></div>
 
-  <main>
+  <main id="content">
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="reveal" style="transition-delay:0s">
           <span class="eyebrow">Rescue your Technology. Recover your Value.</span>
-          <h1>Rescue your Technology. Recover your Value.</h1>
+          <h1>Rescue your Technology. <span class="gradient-text">Recover your Value.</span></h1>
           <p class="lead">Smarter Device Lifecycle Management for Australian Organisations</p>
 
-          <div class="trust-indicators">
+          <div class="trust-indicators reveal" style="transition-delay:0.08s">
             <div class="trust-item">
               <strong>20+ YEARS</strong>
               <span>INDUSTRY EXPERTISE</span>
@@ -34,19 +48,19 @@
           </div>
 
           <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Ready to Get Started?</a>
-            <a href="services.html" class="btn btn-secondary">Explore Services</a>
+            <a href="/contact" class="btn btn-primary">Ready to Get Started?</a>
+            <a href="/services" class="btn btn-secondary">Explore Services</a>
           </div>
         </div>
 
-        <div class="value-prop-card">
+        <div class="value-prop-card reveal" style="transition-delay:0.16s">
           <h3>What Sets Us Apart</h3>
           <ul class="value-list">
-            <li><strong>Repair Before Replace:</strong> Extend device life to delay unnecessary spending.</li>
-            <li><strong>One Partner, Full Lifecycle:</strong> Procurement, deployment, support and e-waste handled under one roof.</li>
-            <li><strong>Cost-Focused:</strong> Decisions aligned to your budget and total cost of ownership.</li>
-            <li><strong>Local Support:</strong> Sydney-based teams with faster turnaround times than manufacturers.</li>
-            <li><strong>Sustainability:</strong> Responsible recovery and recycling built into the process.</li>
+            <li class="reveal" style="transition-delay:0.18s"><strong>Repair Before Replace:</strong> Extend device life to delay unnecessary spending.</li>
+            <li class="reveal" style="transition-delay:0.24s"><strong>One Partner, Full Lifecycle:</strong> Procurement, deployment, support and e-waste handled under one roof.</li>
+            <li class="reveal" style="transition-delay:0.30s"><strong>Cost-Focused:</strong> Decisions aligned to your budget and total cost of ownership.</li>
+            <li class="reveal" style="transition-delay:0.36s"><strong>Local Support:</strong> Sydney-based teams with faster turnaround times than manufacturers.</li>
+            <li class="reveal" style="transition-delay:0.42s"><strong>Sustainability:</strong> Responsible recovery and recycling built into the process.</li>
           </ul>
 
           <div class="onboarding">
@@ -62,38 +76,22 @@
       </div>
     </section>
 
-    <section class="section services-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Explore the site</p>
-          <h2>Find the page that matches your needs.</h2>
-          <p>Visit each section to learn more about our services, team, client success, and how to get in touch.</p>
+    <section class="about-preview">
+      <div class="container about-grid">
+        <div class="about-text reveal" style="transition-delay:0.24s">
+          <p class="eyebrow">Who We Are</p>
+          <h2>20+ Years of IT Recovery Expertise</h2>
+          <p>Trivio Rescue provides secure, sustainable device lifecycle management and local support for Australian organisations. We specialise in repair-first strategies, responsible recycling, and fast on-the-ground service to minimise downtime and total cost of ownership.</p>
+          <a href="/about" class="btn btn-primary">Learn More About Us</a>
         </div>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3><a href="services.html">Services</a></h3>
-            <p>See the ways we help businesses build stronger brands, websites, and internal operations.</p>
-          </article>
-          <article class="card">
-            <h3><a href="about.html">About</a></h3>
-            <p>Learn about our approach, mission, and how we deliver practical business solutions.</p>
-          </article>
-          <article class="card">
-            <h3><a href="case-studies.html">Case studies</a></h3>
-            <p>Read client feedback and success stories from teams who grew with our support.</p>
-          </article>
-          <article class="card">
-            <h3><a href="contact.html">Contact</a></h3>
-            <p>Reach out with your project goals and get a clear next step for working together.</p>
-          </article>
-        </div>
+        <div class="about-image-placeholder reveal" aria-hidden="true" style="transition-delay:0.30s"></div>
       </div>
     </section>
   </main>
 
-  <div data-include="partials/footer.html"></div>
+  <div data-include="/partials/footer.html"></div>
 
-  <script src="assets/js/script.js"></script>
+  <script src="/assets/js/script.js?v=2" defer></script>
 </body>
 </html>

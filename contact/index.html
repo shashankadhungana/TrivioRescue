@@ -5,24 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Trivio Rescue</title>
   <meta name="description" content="Contact Trivio Rescue for business services, website projects, and operational support.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <div data-include="partials/header.html"></div>
+  <div data-include="/partials/header.html"></div>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="reveal">
           <span class="eyebrow">Get in touch</span>
           <h1>Let’s talk about your next business project.</h1>
           <p>Share your goals, and we’ll suggest the right approach to move your brand forward.</p>
           <div class="hero-actions">
             <a href="#contact-form" class="btn btn-primary">Send a message</a>
-            <a href="index.html" class="btn btn-secondary">Back to home</a>
+            <a href="/" class="btn btn-secondary">Back to home</a>
           </div>
         </div>
-        <div class="hero-card">
+        <div class="hero-card value-prop-card reveal">
           <p class="stat">Fast response and clear planning.</p>
           <ul>
             <li>Project scoping</li>
@@ -35,23 +35,23 @@
 
     <section id="contact-form" class="section contact-section">
       <div class="container contact-grid">
-        <div>
+        <div class="card reveal">
           <p class="eyebrow">Contact</p>
           <h2>Share your business goals.</h2>
           <p>Tell us about your needs, and we’ll follow up with a proposal and next steps.</p>
           <div class="contact-details">
             <p><strong>Phone:</strong> 0478 930 333</p>
-            <p><strong>Email:</strong> <a href="mailto:info@myphonerescue.com.au">info@myphonerescue.com.au</a></p>
+            <p><strong>Email:</strong> <a href="mailto:contact@triviorescue.com">contact@triviorescue.com</a></p>
             <p><strong>Locations:</strong> Wynyard Railway Station &amp; Martin Place Metro Station, Sydney</p>
             <p><strong>Business Details:</strong> ABN 426 304 683 25</p>
           </div>
         </div>
 
-        <div id="form-success" class="form-success" style="display:none;margin-bottom:1rem;padding:0.75rem;border-radius:6px;background:#e6ffed;color:#064e3b">Thanks — your message was sent. We’ll respond shortly.</div>
+        <div id="form-success" class="form-success reveal" style="display:none;margin-bottom:1rem;padding:0.75rem;border-radius:6px;background:#e6ffed;color:#064e3b">Thanks — your message was sent. We’ll respond shortly.</div>
 
-        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mrpzkobk" method="POST">
+        <form id="contact-form" class="contact-form card reveal" action="https://formspree.io/f/mrpzkobk" method="POST">
           <input type="hidden" name="_subject" value="Website enquiry - Trivio Rescue">
-          <input type="hidden" name="_next" value="https://www.triviorescue.com/contact.html?success=1">
+          <input type="hidden" name="_next" value="/contact/?success=1">
 
           <label>
             Name
@@ -67,14 +67,12 @@
           </label>
           <button type="submit" class="btn btn-primary">Send message</button>
         </form>
-        <div class="disclaimer">
-          <p><strong>Disclaimer:</strong> Standard pricing is set with reference to typical retail rates. Formal quotes and rate cards are available upon request. Customers must back up their data before handing over devices; we are not responsible for unrecoverable personal data if backups are not provided.</p>
-        </div>
+        <!-- Disclaimer removed per request -->
       </div>
     </section>
   </main>
 
-  <div data-include="partials/footer.html"></div>
+  <div data-include="/partials/footer.html"></div>
 
   <script>
   // Show simple success message when redirected back with ?success=1
@@ -92,6 +90,6 @@
     }
   });
   </script>
-  <script src="assets/js/script.js"></script>
+  <script src="/assets/js/script.js?v=2"></script>
 </body>
 </html>
