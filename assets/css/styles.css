@@ -70,13 +70,13 @@ textarea {
   align-items: center;
   gap: 12px;
   color: var(--header-text);
-  font-size: 1.15rem;
+  font-size: 1.6rem;
   font-weight: 700;
   text-decoration: none;
 }
 
 .logo-icon {
-  height: 40px;
+  height: 64px;
   width: auto;
 }
 
