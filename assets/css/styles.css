@@ -66,10 +66,18 @@ textarea {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: var(--header-text);
   font-size: 1.15rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+.logo-icon {
+  height: 40px;
+  width: auto;
 }
 
 .nav-links {
