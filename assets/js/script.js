@@ -32,24 +32,50 @@ function initUI() {
 
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    // If the form posts to an external endpoint (e.g. Formspree), allow normal submission.
     const action = contactForm.getAttribute('action') || '';
-    const isExternal = /^https?:\/\//i.test(action) && !action.includes(location.hostname);
-    if (!isExternal) {
-      contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        if (submitButton) {
-          submitButton.textContent = 'Message sent!';
-          submitButton.disabled = true;
-          setTimeout(() => {
-            submitButton.textContent = 'Send message';
-            submitButton.disabled = false;
-            contactForm.reset();
-          }, 1800);
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const successMessage = document.getElementById('form-success');
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      try {
+        const response = await fetch(action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (!response.ok) throw new Error('Form submission failed');
+
+        contactForm.reset();
+        if (successMessage) {
+          successMessage.textContent = 'Thanks — your message was sent. We will respond shortly.';
+          successMessage.style.display = 'block';
+          successMessage.style.background = '#e6ffed';
+          successMessage.style.color = '#064e3b';
         }
-      });
-    }
+        if (submitButton) submitButton.textContent = 'Message sent!';
+        window.setTimeout(() => {
+          window.location.replace('/contact/');
+        }, 2200);
+      } catch (error) {
+        if (successMessage) {
+          successMessage.textContent = 'Sorry, your message could not be sent. Please try again.';
+          successMessage.style.display = 'block';
+          successMessage.style.background = '#fee2e2';
+          successMessage.style.color = '#991b1b';
+        }
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Try again';
+        }
+      }
+    });
   }
 
   // Initialize reveal-on-scroll observer for elements with .reveal
