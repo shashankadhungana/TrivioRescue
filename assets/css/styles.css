@@ -915,7 +915,7 @@ footer p,
 
 .about-backed-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 180px;
+  grid-template-columns: minmax(0, 1fr) 230px;
   gap: 2rem;
   align-items: start;
   margin-top: 1.5rem;
@@ -923,13 +923,14 @@ footer p,
 
 .about-backed-copy {
   min-width: 0;
+  text-align: justify;
 }
 
 .about-backed-logo {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 150px;
+  max-height: 190px;
   object-fit: contain;
   object-position: center;
   margin: 0.25rem 0 0;
